@@ -22,10 +22,11 @@ body{
     position:relative;
     display:stretch;
     flex-direction: row;
+    opacity: 0;
 }
 
 .intro {
-    background-color:red;
+    background-color:black;
     text-align: center;
     max-width: 100vw;
     min-height: 100vh;
@@ -34,9 +35,12 @@ body{
     display:flex;
     cursor:pointer;
     position:absolute; top: 0; left: 0;
-    z-index:99;
-    transition:2s;
+    z-index:98;
+    transition:2.5s;
     padding-bottom:2%;
+}
+#introimg{
+    transition:3s;
 }
 
 @keyframes slideup{
@@ -57,11 +61,11 @@ body{
     color:rgb(0, 0, 0);
     font-weight:light;
     font-size:3vw;
-    position: absolute; top:40%; left: 75%;
-    transform: translate(-65%,-50%);
+    position: absolute; bottom:15%; right: 5%;
     animation: fadeIn 5s ease;
     animation-delay:4s;
     animation-fill-mode: backwards;
+    z-index: 99;
 }
 @keyframes fadeIn{
     0%  {opacity: 0};
