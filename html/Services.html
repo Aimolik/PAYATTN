@@ -18,19 +18,21 @@
     <section class="bodyswap">
         <ul class="serv_menu">
             <div class="column" id="servs">
+                <h2 id="servtxt"><q>Pay Attention Car Service's<br> mission is to become the most<br> reliable valet service, offering<br> cutting edge quality, service, and<br> consulting for all clients</q></h2>
                 <img src="/res/serv_plcehld.gif" id="valet">
                 <img src="/res/serv_plcehld.gif" id="consult">
                 <img src="/res/serv_plcehld.gif" id="system">
-                </div>
-            <ul class="column" id="desc">
-                <li class="box" id="valet_info">
-                    <h2>Valet</h2>
+            </div>
+            <h2 id="instruct">Select from our above services<br> to learn more</h2>
+            <ul class="column">
+                <li>
+                    <h2 class="options" id="val_info">Valet</h2>
                 </li>
-                <li class="box" id="consult_info">
-                    <h2>Consulting</h2>
+                <li>
+                    <h2 class="options" id="con_info">Consulting</h2>
                 </li> 
-                <li class="box" id="system_info">
-                    <h2>Systems</h2>
+                <li >
+                    <h2 class="options" id="sys_info">Systems</h2>
                 </li>
             </ul>
         </ul>
@@ -56,9 +58,37 @@
             </ul>
     </section>
     <script>
-        var intro = document.getElementById("intros");
-        function hideIntro(){
-            intros.style.top="-2000px";
+        var mission = document.getElementById('servtxt');
+        var instruction = document.getElementById('instruct');
+        var items = document.querySelectorAll('h2.options');
+        var videos = servs.querySelectorAll('div.column > img');
+        var nodes = Array.prototype.slice.call(items); //for item index to match with video.
+
+        document.addEventListener('DOMContentLoaded', function() {
+            videos.forEach(v => v.classList.add('selectedVideo'));
+            setTimeout(function(){
+                instruction.style.left='70%';
+            },5000);
+        });
+
+        items.forEach(item => {
+            item.addEventListener('click', e => {
+                var h2 = e.currentTarget;
+                var index = nodes.indexOf(h2);
+                items.forEach(h => h !== h2 && h.classList.remove('selected'));
+                h2.classList.toggle('selected');
+                
+                mission.style.display='none';
+                var vid = videos[index];
+                videos.forEach(v => v !== vid && v.classList.add('selectedVideo'));
+                vid.classList.toggle('selectedVideo');
+            });
+        });
+
+        function selector(list_id){
+            var chosenitem = document.getElementById(list_id);
+            chosenitem.style.color = 'white';
+            chosenitem.style.fontSize = '4.2rem';
         }
 
     </script>
