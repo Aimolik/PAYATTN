@@ -79,6 +79,7 @@
                 h2.classList.toggle('selected');
                 
                 mission.style.display='none';
+                instruction.style.display='none';
                 var vid = videos[index];
                 videos.forEach(v => v !== vid && v.classList.add('selectedVideo'));
                 vid.classList.toggle('selectedVideo');
