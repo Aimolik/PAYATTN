@@ -20,6 +20,8 @@
             <a href="/index.html"><img src="/res/PALogo.png" id="mobilelogo"></a>
     </nav>
     <section class="bodyswap" id="one">
+        <img src="/res/blinker.png" class="blinker" id="lblink">
+        <img src="/res/blinker.png" class="blinker" id="rblink">
         <div class="row">
             <div class="box">
                 <i class="fa-solid fa-handshake" id="hands"></i>
@@ -36,10 +38,10 @@
                         <br>We are the best choice for quality solutions in every lot, hotel, or dealership- we pay attention to YOUR needs.</p>
                 </div>
             </div> 
-        </div>
-        <ul class="navig_menu">
-            <li class="navig_item">
-                <a href="/Services.html" class="navig_links">
+        </div> 
+        <ul class="navig_menu" id="content">
+            <li class="navig_item" onmouseenter="blinking(blinkers[0])" onmouseout="StopFunction()">
+                <a href="/Services.html" class="navig_links" id="serv">
                    <div class="innernav">
                         Services
                     </div>
@@ -65,10 +67,10 @@
                     </li>
                 </ul>
             </div>
-            <li class="navig_item">
-                <a href="/Contact.html" class="navig_links">
+            <li class="navig_item" onmouseenter="blinking(blinkers[1])" onmouseout="StopFunction()">
+                <a href="/Contact.html" class="navig_links" id="cont">
                     <div class="innernav">
-                        Contact us<i class="fa-solid fa-angle-right" id="rAr" style="color: red;"></i>
+                        Contact us
                     </div>
                 </a>
                 </li>
@@ -77,10 +79,15 @@
     <script>
         var intro = document.getElementById('one');
         var enginestart = new Audio('/res/engine.wav');
+        var blinkers = document.getElementsByClassName('blinker');
+        var hovers = document.getElementsByClassName('navig_item');
+
+
         function hideIntro(){
             intros.style.transform = 'scale(0.14,0.14)';
             intros.style.top = '-30px';
             one.style.opacity = '1'
+            one.style.backgroundSize = '100%';
             setTimeout(function(){
                 enginestart.play();
             }, 300);
@@ -88,10 +95,28 @@
                 intros.style.opacity = '0';
             }, 2000);
             setTimeout(function(){
+                one.style.backgroundSize = 'cover';
+            }, 2450);
+            setTimeout(function(){
+                content.style.opacity = '1';
+            }, 3000);
+            setTimeout(function(){
                 intros.style.display = 'none';
-            }, 3500);
+            }, 3400);
         }
 
+        function blinker(element, duration){
+            element.style.opacity = 1;
+            setTimeout(function(){  element.style.opacity = 0;}, duration);
+        }
+        function blinking(element){
+            stp = setInterval(function(){ blinker(element, 500) }, 1000);
+        }
+        function StopFunction()
+        {
+        clearInterval(stp);
+        }
+        
     </script>
 </body>
 </html>

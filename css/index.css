@@ -9,24 +9,51 @@ html {
     height:100%;
 }
 body{
-    background-image: url(/res/audiwppr.jpg);
-    background-position:top;
+    background-image: url(/res/bmwbg.jpg);
     background-repeat: no-repeat;
-    background-size:cover;
-    background-color:white;
+    background-size: cover;
+    background-position: -200px 0px;
 }
+
+.blinker{
+position:absolute;
+top:34.3%;
+width:100px;
+max-height: 57px;
+opacity:0;
+z-index:0;
+}
+#lblink{
+    left:18.7%;
+    transform:rotate(-8deg);
+}
+#rblink{
+    transform: rotate(6deg) scaleX(-1);
+    right:20%;
+}
+
 
 .bodyswap{
     height:100%;
     width:100%;
+    max-height: max-content;
     position:relative;
     display:stretch;
     flex-direction: row;
     opacity: 0;
+    background-image: url(/res/bmwbg.jpg);
+    background-position:center;
+    background-repeat: no-repeat;
+    transition: background-size 2.5s ease-in, opacity 0s;
+}
+
+#content{
+    opacity:0;
+    transition: 2s;
 }
 
 .intro {
-    background-color:black;
+    background-color:none;
     text-align: center;
     max-width: 100vw;
     height: 100vh;
@@ -148,14 +175,13 @@ display:none;
     align-items:center;
     cursor:pointer;
     text-decoration:none;
-    width: 14vw;
-    max-height: 7vw;
+    width: 220px;
+    max-height:110px;
     border: 0px;
     transition:650ms ease-in-out;
+    margin-bottom:15px;
 }
-#logo:hover{
-    filter:invert(1);
-}
+
 #rAr{
     opacity: 1;
     align-self: center;
@@ -167,6 +193,7 @@ display:none;
     display:flex;
     flex-direction: column;
     justify-content: space-between;
+    margin-right:20px;
 }
 #plate{
     z-index: 9;
@@ -194,7 +221,7 @@ display:none;
 }
 .navig_item{
     background-color: null;
-    font-size:2vw;
+    font-size:1.8rem;
     padding: 10px;
     border-radius: 8px;
     align-self: stretch;
@@ -202,6 +229,7 @@ display:none;
     opacity: 1;
     flex:1;
     transition: 625ms ease-in-out;
+    z-index:1;
 }
 
 .navig_item:hover{
@@ -209,25 +237,33 @@ display:none;
 }
 
 .navig_links{
-    color: red;
+    color: #DEC017;
     display:flex;
     text-decoration:none;
-    padding: 0 1rem;
     align-self: stretch;
     justify-content: center;
     flex:1;
 }
 .innernav{
-    align-self:center;
+    padding:0 0.5rem;
+    border-radius: 5px;
+    position:absolute;
+    top:50%;
+}
+#serv{
+    margin-left:10%;
+}
+#cont{
+    margin-right:15%;
 }
 
 @-webkit-keyframes whitePulse {
     from {
-        background-color: white;
+        background-color: rgb(255, 125, 31);
         -webkit-box-shadow: 0 0 10px white;
    }
    to {
-       background-color: #ffffff;
+       background-color: rgb(255, 125, 31);
        -webkit-box-shadow: 0 0 10px white;
    }
 }

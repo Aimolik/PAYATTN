@@ -1,0 +1,92 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto Condensed', sans-serif;
+    overflow: hidden;
+}
+
+body{
+    background-position:top;
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-color:black;
+    display: flex;
+}
+
+.bodyswap{
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+    align-content: center;
+    height:100%;
+    height:100vh;
+}
+
+.contactbox{
+    margin-top: 40%;
+    flex-direction: column;
+    text-align: center;
+}
+
+.contact-form{
+    display:flex;
+    flex-direction: column;
+    row-gap: 15px;
+}
+.contact-form *{
+    text-align: center;
+    height:30px;
+    width: 20vw;
+    border-radius: 5px;
+}
+.contact-form textarea{
+    height:200px;
+    width: 20vw;
+    border-radius: 5px;
+}
+
+p{
+    color:white;
+    font-size: 3rem;
+    margin-bottom: 5%;
+}
+
+#home{
+    display:flex;
+    flex-direction: column-reverse;
+    margin-top:auto;
+}
+
+.navig {
+display:none;
+}
+#logo{
+    display:static;
+    align-items:center;
+    cursor:pointer;
+    text-decoration:none;
+    width: 14vw;
+    max-height: 7vw;
+    border: 0px;
+    filter:invert(1);
+    transition:650ms ease-in-out;
+}
+#logo:hover{
+    filter:invert(0);
+}
+#plate{
+    z-index: 9;
+    align-self: center;
+}
+#smlinks{
+    display:flex;
+    justify-content: center;
+    column-gap: 1%;
+    font-size: 3vh;
+}
+.sm{
+    transition: 400ms ease-in-out;
+}
+.sm:hover{
+    filter:invert(0.5);
+}

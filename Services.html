@@ -7,16 +7,16 @@
     <title>MUKIT</title>
     <link rel="stylesheet" href="/css/services.css"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
-<script src="https://kit.fontawesome.com/263328a4a5.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/263328a4a5.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <nav class="navig">
             <a href="/index.html"><img src="/res/PALogo.png" id="mobilelogo"></a>
     </nav>
     <section class="bodyswap">
-        <ul class="serv_menu">
+        <div id="serv_menu">
             <div class="column" id="servs">
                 <h2 id="servtxt"><q>Pay Attention Car Service's<br> mission is to become the most<br> reliable valet service, offering<br> cutting edge quality, service, and<br> consulting for all clients</q></h2>
                 <img src="/res/serv_plcehld.gif" id="valet">
@@ -24,19 +24,19 @@
                 <img src="/res/serv_plcehld.gif" id="system">
             </div>
             <h2 id="instruct">Select from our above services<br> to learn more</h2>
-            <ul class="column">
-                <li>
-                    <h2 class="options" id="val_info">Valet</h2>
+            <div class="column" id="servlist">
+                <li class="options">
+                    <h2 id="val_info">Valet</h2>
                 </li>
-                <li>
-                    <h2 class="options" id="con_info">Consulting</h2>
+                <li class="options">
+                    <h2 id="con_info">Consulting</h2>
                 </li> 
-                <li >
-                    <h2 class="options" id="sys_info">Systems</h2>
+                <li class="options">
+                    <h2 id="sys_info">Systems</h2>
                 </li>
-            </ul>
-        </ul>
-            <ul id="home">
+            </div>
+        </div>
+            <div id="home">
                 <ul id="smlinks">
                     <li class="sm">
                         <a href="https://www.Instagram.com" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram" style="color: #0061ff;"></i>
@@ -55,43 +55,55 @@
                     <a href="/index.html"><img src="/res/PALogo.png" id="logo">
                     </a>
                 </li>
-            </ul>
+            </div>
+            <h2>
+                <a href="/Contact.html" id="quickcontact">Reach out</a>
+            </h2>
     </section>
     <script>
+
+        var everything = document.getElementsByTagName('div');
+        var but = document.getElementById('serv_menu');
         var mission = document.getElementById('servtxt');
         var instruction = document.getElementById('instruct');
-        var items = document.querySelectorAll('h2.options');
+        var quick = document.getElementById('quickcontact');
+        var srvlst = document.getElementById('servlist');
+        var items = document.querySelectorAll('li.options');
         var videos = servs.querySelectorAll('div.column > img');
         var nodes = Array.prototype.slice.call(items); //for item index to match with video.
 
+
         document.addEventListener('DOMContentLoaded', function() {
             videos.forEach(v => v.classList.add('selectedVideo'));
+            everything.forEach(thing => {
+                thing.style.visibility='hidden';
+            })
             setTimeout(function(){
-                instruction.style.left='70%';
+
+                setTimeout(function(){
+                    instruction.style.left='70%';
+                },5000);
             },5000);
         });
 
         items.forEach(item => {
             item.addEventListener('click', e => {
-                var h2 = e.currentTarget;
-                var index = nodes.indexOf(h2);
-                items.forEach(h => h !== h2 && h.classList.remove('selected'));
-                h2.classList.toggle('selected');
-                
-                mission.style.display='none';
-                instruction.style.display='none';
+                var sel = e.currentTarget;
+                var index = nodes.indexOf(sel);
+                items.forEach(lastsel => lastsel !== sel && lastsel.classList.remove('selected'));
+                sel.classList.toggle('selected');
+            
                 var vid = videos[index];
                 videos.forEach(v => v !== vid && v.classList.add('selectedVideo'));
                 vid.classList.toggle('selectedVideo');
+
+                mission.style.display='none';
+                instruction.style.display='none';
+                setTimeout(function(){
+                quick.style.opacity='1';
+                },3000);
             });
         });
-
-        function selector(list_id){
-            var chosenitem = document.getElementById(list_id);
-            chosenitem.style.color = 'white';
-            chosenitem.style.fontSize = '4.2rem';
-        }
-
     </script>
 </body>
 </html>

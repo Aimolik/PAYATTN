@@ -7,19 +7,44 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/263328a4a5.js" crossorigin="anonymous"></script>
     <title>Contact Us</title>
 </head>
 <body>
+    <section class="bodyswap">
     <main>
-        <p>Contact us</p>
-        <form class="contact-form" action="contactform.php" method="post">
-            <input type="text" name="name" placeholder="Full name">
-            <input type="text" name="mail" placeholder="Your e-mail">
-            <input type="text" name="subject" placeholder="Subject">
-            <textarea name ="message" placeholder="Message"></textarea>
-            <button type="submit" name="submit">Submit Info</button>
-        </form>
+            <div class="contactbox">
+                <p>Contact us</p>
+                <form class="contact-form" action="contactform.php" method="post">
+                    <input type="text" name="name" placeholder="Full name">
+                    <input type="text" name="mail" placeholder="Your e-mail">
+                    <input type="text" name="subject" placeholder="Subject">
+                    <textarea name ="message" placeholder="Message"></textarea>
+                    <button type="submit" name="submit">Submit Info</button>
+                </form>
+            </div>
     </main>
+    <ul id="home">
+        <ul id="smlinks">
+            <li class="sm">
+                <a href="https://www.Instagram.com" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram" style="color: #0061ff;"></i>
+                </a>
+            </li>
+            <li  class="sm">
+                <a href="https://www.Twitter.com" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-twitter" style="color: #0061ff;"></i>
+                </a>
+            </li>
+            <li  class="sm">
+                <a href="https://www.Facebook.com" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook" style="color: #0061ff;"></i>
+                </a>
+            </li>
+        </ul>
+        <li id="plate">
+            <a href="/index.html"><img src="/res/PALogo.png" id="logo">
+            </a>
+        </li>
+    </ul>
+</section>
     
 </body>
 </html>

@@ -38,8 +38,11 @@ body{
     justify-content: space-evenly;
     margin:auto;
 }
+#servlist{
+    row-gap: 15px;
+}
 
-.serv_menu{
+#serv_menu{
     list-style:none;
     display:flex;
     flex-direction: row;
@@ -67,6 +70,7 @@ transition: 1.2s;
     z-index: 44;
     margin-left:auto;
     margin-right:auto;
+    transition:1s;
 }
 #instruct{
     position:absolute;
@@ -95,26 +99,36 @@ transition: 1.2s;
 
 .options{
     cursor:pointer;
-    background-color: null;
-    color:rgb(38, 38, 255);
     text-align: center;
-    font-size:2.8rem;
-    margin: 10px 15px;
-    transition: all 1s;
+    font-size:2rem;
+    transition: 1.2s;
+    color:blue;
+}
+.options:hover{
+    color:white;
+}
+.options h2{
+    margin:0;
 }
 
 .selected{
-    font-size:4.5rem;
-    color:white;
-}
-
-.options:hover{
+    font-size:3.3rem;
     color:white;
 }
 
 #home{
     display:flex;
     flex-direction: column-reverse;
+}
+
+#quickcontact{
+    position: absolute;
+    bottom:22%;
+    right:5%;
+    color: white;
+    font-size: 3rem;
+    opacity:0;
+    transition: 1.6s;
 }
 
 .navig {
