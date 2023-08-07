@@ -79,15 +79,25 @@ http://127.0.0.1:5500/Services.html                    <h2>The Vision</h2>
         var blinkers = document.getElementsByClassName('blinker');
         var hovers = document.getElementsByClassName('navig_item');
         var stkrs = document.querySelectorAll('.innernav');
+        var all = document.querySelector('#one').children;
+        var all_array = [...all];
+
         
-        
-        stkrs.forEach(bs =>{
+
+        stkrs.forEach(bs => {
             var bee = bs.querySelector('img');
             bs.addEventListener('mouseenter', e => {
                 bee.classList.add('lrgstckr');
+                all_array.forEach(el =>{
+                    el.classList.add('blur');
+                })
+
             })
             bs.addEventListener('mouseleave', e => {
                 bee.classList.remove('lrgstckr');
+                all_array.forEach(el =>{
+                    el.classList.remove('blur');
+                })
             })
         })
 

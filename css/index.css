@@ -251,10 +251,14 @@ display:none;
 .stickrs{
     border-radius: 12px;
     width: 32%;
+    min-width: 150px;
     cursor:pointer;
 }
 .lrgstckr{
     width: 70%;
+}
+.blur{
+    filter: blur(4px);
 }
 
 @-webkit-keyframes whitePulse {
