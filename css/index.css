@@ -44,6 +44,7 @@ z-index:0;
     background-position:center;
     background-repeat: no-repeat;
     transition: background-size 2.5s ease-in, opacity 0s;
+    position:relative;
 }
 
 #content{
@@ -188,8 +189,14 @@ display:none;
     text-align:center;
     display:flex;
     flex-direction: column;
-    justify-content: space-between;
     margin-right:20px;
+    font-size: 1.2rem;
+}
+.midcolumn h1{
+    color:white;
+    position:absolute;
+    bottom: 33%;
+    right: 44%;
 }
 #plate{
     z-index: 9;
