@@ -170,13 +170,10 @@ display:none;
 }
 
 #logo{
-    display:static;
     align-items:center;
     cursor:pointer;
     text-decoration:none;
     width: 150px;
-    max-height:110px;
-    border: 0px;
     transition:650ms ease-in-out;
     margin-bottom:15px;
 }
@@ -233,20 +230,20 @@ display:none;
     padding:2rem;
     border-radius: 5px;
     margin:auto;
-    margin-bottom:26vh;
+    margin-bottom:26.3vh;
     display:flex;
 }
 #serv{
-    transform: rotate(-6deg);
+    transform: rotate(-5deg);
     justify-content: end;
 }
 #cont{
     justify-content: start;
-    transform: rotate(6deg);
+    transform: rotate(5deg);
 }
 .stickrs{
     border-radius: 12px;
-    width: 35%;
+    width: 32%;
     cursor:pointer;
 }
 .lrgstckr{
