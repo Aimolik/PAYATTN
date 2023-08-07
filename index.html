@@ -41,10 +41,8 @@ http://127.0.0.1:5500/Services.html                    <h2>The Vision</h2>
         </div> 
         <ul class="navig_menu" id="content">
             <li class="navig_item" onmouseenter="blinking(blinkers[0])" onmouseout="StopFunction()">
-                <a href="/Services.html" class="navig_links" id="serv">
-                   <div class="innernav">
-                        Services
-                    </div>
+                <a href="/Services.html" class="innernav" id="serv">
+                    <img src="/res/greenserv.png" class="stickrs">
                 </a>
             </li>
             <div class="midcolumn">
@@ -68,10 +66,8 @@ http://127.0.0.1:5500/Services.html                    <h2>The Vision</h2>
                 </ul>
             </div>
             <li class="navig_item" onmouseenter="blinking(blinkers[1])" onmouseout="StopFunction()">
-                <a href="/Contact.html" class="navig_links" id="cont">
-                    <div class="innernav">
-                        Contact us
-                    </div>
+                <a href="/Contact.html" class="innernav" id="cont">
+                    <img src="/res/yellowcont.png" class="stickrs">
                 </a>
                 </li>
         </ul>
@@ -81,7 +77,18 @@ http://127.0.0.1:5500/Services.html                    <h2>The Vision</h2>
         var enginestart = new Audio('/res/engine.wav');
         var blinkers = document.getElementsByClassName('blinker');
         var hovers = document.getElementsByClassName('navig_item');
-
+        var stkrs = document.querySelectorAll('.innernav');
+        
+        
+        stkrs.forEach(bs =>{
+            var bee = bs.querySelector('img');
+            bs.addEventListener('mouseenter', e => {
+                bee.classList.add('lrgstckr');
+            })
+            bs.addEventListener('mouseleave', e => {
+                bee.classList.remove('lrgstckr');
+            })
+        })
 
         function hideIntro(){
             intros.style.transform = 'scale(0.14,0.14)';

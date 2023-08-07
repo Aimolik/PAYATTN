@@ -37,7 +37,6 @@ z-index:0;
     height:100%;
     width:100%;
     max-height: max-content;
-    position:relative;
     display:stretch;
     flex-direction: row;
     opacity: 0;
@@ -216,15 +215,12 @@ display:none;
     list-style:none;
     display:flex;
     flex-direction: row;
-    justify-content: space-between;
     height:100vh;
 }
 .navig_item{
     background-color: null;
     font-size:1.5rem;
-    padding: 10px;
     border-radius: 8px;
-    align-self: stretch;
     display:flex;
     opacity: 1;
     flex:1;
@@ -232,29 +228,29 @@ display:none;
     z-index:1;
 }
 
-.navig_item:hover{
-    background-color: rgba(255, 0, 0, 0.2);
-}
 
-.navig_links{
-    color: #DEC017;
-    display:flex;
-    text-decoration:none;
-    align-self: stretch;
-    justify-content: center;
-    flex:1;
-}
 .innernav{
-    padding:0 0.5rem;
+    padding:2rem;
     border-radius: 5px;
-    position:absolute;
-    top:53%;
+    max-height: 10%;
+    margin:auto;
+    margin-bottom:30vh;
 }
 #serv{
-    margin-left:10%;
+    margin-right:10%;
+    transform: rotate(-6deg);
 }
 #cont{
-    margin-right:15%;
+    margin-left:10%;
+    transform: rotate(6deg);
+}
+.stickrs{
+    border-radius: 12px;
+    width: 150px;
+    cursor:pointer;
+}
+.lrgstckr{
+    width: 400px;
 }
 
 @-webkit-keyframes whitePulse {
