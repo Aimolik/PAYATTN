@@ -175,7 +175,7 @@ display:none;
     align-items:center;
     cursor:pointer;
     text-decoration:none;
-    width: 220px;
+    width: 150px;
     max-height:110px;
     border: 0px;
     transition:650ms ease-in-out;
@@ -221,7 +221,7 @@ display:none;
 }
 .navig_item{
     background-color: null;
-    font-size:1.8rem;
+    font-size:1.5rem;
     padding: 10px;
     border-radius: 8px;
     align-self: stretch;
@@ -248,7 +248,7 @@ display:none;
     padding:0 0.5rem;
     border-radius: 5px;
     position:absolute;
-    top:50%;
+    top:53%;
 }
 #serv{
     margin-left:10%;

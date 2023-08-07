@@ -12,7 +12,7 @@ body{
     background-position:top;
     background-repeat: no-repeat;
     background-size:cover;
-    background-color:black;
+    background-image:url(/res/bckgrndbckgrnd.jpg);
 }
 
 .bodyswap{
@@ -142,11 +142,10 @@ display:none;
     width: 14vw;
     max-height: 7vw;
     border: 0px;
-    filter:invert(1);
     transition:650ms ease-in-out;
 }
 #logo:hover{
-    filter:invert(0);
+    filter:invert(1);
 }
 #rAr{
     opacity: 1;
