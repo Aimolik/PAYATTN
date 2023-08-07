@@ -232,25 +232,25 @@ display:none;
 .innernav{
     padding:2rem;
     border-radius: 5px;
-    max-height: 10%;
     margin:auto;
-    margin-bottom:30vh;
+    margin-bottom:26vh;
+    display:flex;
 }
 #serv{
-    margin-right:10%;
     transform: rotate(-6deg);
+    justify-content: end;
 }
 #cont{
-    margin-left:10%;
+    justify-content: start;
     transform: rotate(6deg);
 }
 .stickrs{
     border-radius: 12px;
-    width: 150px;
+    width: 35%;
     cursor:pointer;
 }
 .lrgstckr{
-    width: 400px;
+    width: 70%;
 }
 
 @-webkit-keyframes whitePulse {
