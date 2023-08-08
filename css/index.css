@@ -3,6 +3,7 @@
     padding: 0;
     font-family: 'Roboto Condensed', sans-serif;
     overflow: hidden;
+    z-index: 2;
 }
 
 html {
@@ -12,24 +13,7 @@ body{
     background-image: url(/res/bmwbg.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: -200px 0px;
-}
-
-.blinker{
-position:absolute;
-top:34.3%;
-width:100px;
-max-height: 57px;
-opacity:0;
-z-index:0;
-}
-#lblink{
-    left:18.7%;
-    transform:rotate(-8deg);
-}
-#rblink{
-    transform: rotate(6deg) scaleX(-1);
-    right:20%;
+    background-position:center;
 }
 
 
@@ -46,6 +30,41 @@ z-index:0;
     transition: background-size 2.5s ease-in, opacity 0s;
     position:relative;
 }
+.blur::before{
+    content: "";
+    position: absolute;
+    width : 100%;
+    height: 100%;
+    background: inherit;
+    z-index: -1;
+
+    filter        : blur(4px);
+    -moz-filter   : blur(4px);
+    -webkit-filter: blur(4px);
+    -o-filter     : blur(4px);
+
+    transition        : all 2s linear;
+    -moz-transition   : all 2s linear;
+    -webkit-transition: all 2s linear;
+    -o-transition     : all 2s linear;
+}
+
+.blinker{
+    position:absolute;
+    top:34.3%;
+    width:100px;
+    max-height: 57px;
+    opacity:0;
+    z-index:0;
+    }
+    #lblink{
+        left:18.7%;
+        transform:rotate(-8deg);
+    }
+    #rblink{
+        transform: rotate(6deg) scaleX(-1);
+        right:20%;
+    }
 
 #content{
     opacity:0;
@@ -229,7 +248,7 @@ display:none;
     opacity: 1;
     flex:1;
     transition: 625ms ease-in-out;
-    z-index:1;
+    z-index:2;
 }
 
 
@@ -253,12 +272,18 @@ display:none;
     width: 32%;
     min-width: 150px;
     cursor:pointer;
+    transition: 1s;
+    -webkit-backface-visibility: hidden;
+    -webkit-perspective: 1000;
+    -webkit-transform: translate3d(0,0,0);
+    -webkit-transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000;
+    transform: translate3d(0,0,0);
+    transform: translateZ(0);
 }
 .lrgstckr{
     width: 70%;
-}
-.blur{
-    filter: blur(4px);
 }
 
 @-webkit-keyframes whitePulse {
