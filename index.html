@@ -40,7 +40,7 @@ http://127.0.0.1:5500/Services.html                    <h2>The Vision</h2>
             </div> 
         </div> 
         <ul class="navig_menu" id="content">
-            <li class="navig_item" onmouseenter="blinking(blinkers[0])" onmouseout="StopFunction()">
+            <li class="navig_item">
                 <a href="/Services.html" class="innernav" id="serv">
                     <img src="/res/greenserv.png" class="stickrs">
                 </a>
@@ -52,34 +52,35 @@ http://127.0.0.1:5500/Services.html                    <h2>The Vision</h2>
                 </li>
                 <ul id="smlinks">
                     <li class="sm">
-                        <a href="https://www.instagram.com/payattnent/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram" style="color: #0061ff;"></i>
+                        <a href="https://www.instagram.com/payattnent/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram" style="color: #ffffff;"></i>
                         </a>
                     </li>
                     <li  class="sm">
-                        <a href="https://www.Twitter.com" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-twitter" style="color: #0061ff;"></i>
+                        <a href="https://www.Twitter.com" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-twitter" style="color: #ffffff;"></i>
                         </a>
                     </li>
                     <li  class="sm">
-                        <a href="https://www.Facebook.com" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook" style="color: #0061ff;"></i>
+                        <a href="https://www.Facebook.com" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook" style="color: #ffffff;"></i>
                         </a>
                     </li>
                 </ul>
             </div>
-            <li class="navig_item" onmouseenter="blinking(blinkers[1])" onmouseout="StopFunction()">
+            <li class="navig_item">
                 <a href="/Contact.html" class="innernav" id="cont">
-                    <img src="/res/yellowcont.png" class="stickrs">
+                    <img src="/res/graycont.png" class="stickrs">
                 </a>
                 </li>
         </ul>
     </section>
     <script>
         var intro = document.getElementById('one');
+        var menu = document.getElementById('content')
         var enginestart = new Audio('/res/engine.wav');
         var blinkers = document.getElementsByClassName('blinker');
         var hovers = document.getElementsByClassName('navig_item');
         var stkrs = document.querySelectorAll('.innernav');
-        var all = document.querySelector('#one').children;
-        var all_array = [...all];
+        var lp = document.getElementById('logo');
+        var all = intro.children;
 
         
 
@@ -87,11 +88,17 @@ http://127.0.0.1:5500/Services.html                    <h2>The Vision</h2>
             var bee = bs.querySelector('img');
             bs.addEventListener('mouseenter', e => {
                 bee.classList.add('lrgstckr');
-                intro.classList.add('blur')
+                intro.classList.add('blur');
+                lp.classList.add('plateblur');
+                lp.style.transition="blur 0s ease-in";
             })
             bs.addEventListener('mouseleave', e => {
                 bee.classList.remove('lrgstckr');
-                intro.classList.remove('blur')
+                intro.classList.remove('blur');
+                lp.classList.remove('plateblur');
+                setTimeout(function(){
+                    lp.style.transition="650ms ease-in-out";
+                })
             })
         })
 
@@ -110,7 +117,7 @@ http://127.0.0.1:5500/Services.html                    <h2>The Vision</h2>
                 one.style.backgroundSize = 'cover';
             }, 2450);
             setTimeout(function(){
-                content.style.opacity = '1';
+                menu.style.opacity = '1';
             }, 3000);
             setTimeout(function(){
                 intros.style.display = 'none';

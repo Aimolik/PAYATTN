@@ -30,6 +30,7 @@ body{
     transition: background-size 2.5s ease-in, opacity 0s;
     position:relative;
 }
+
 .blur::before{
     -webkit-backface-visibility: hidden;
     -webkit-perspective: 1000;
@@ -47,15 +48,18 @@ body{
     background: inherit;
     z-index: -1;
 
-    filter        : blur(4px);
     -moz-filter   : blur(4px);
     -webkit-filter: blur(4px);
     -o-filter     : blur(4px);
+    filter        : blur(4px);
+}
 
-    transition        : all 2s linear;
-    -moz-transition   : all 2s linear;
-    -webkit-transition: all 2s linear;
-    -o-transition     : all 2s linear;
+.plateblur{
+    -moz-filter   : blur(4px);
+    -webkit-filter: blur(4px);
+    -o-filter     : blur(4px);
+    filter        : blur(4px);
+    
 }
 
 .blinker{
@@ -202,9 +206,14 @@ display:none;
     align-items:center;
     cursor:pointer;
     text-decoration:none;
-    width: 150px;
+    width: 200px;
+    max-height: 90px;
     transition:650ms ease-in-out;
-    margin-bottom:15px;
+    margin-bottom:12px;
+}
+#logo:hover{
+    width: 280px;
+    max-height: 126px;
 }
 
 #rAr{
@@ -269,34 +278,25 @@ display:none;
     display:flex;
 }
 #serv{
-    transform: rotate(-5deg);
+    transform: rotate(-5deg) translateX(-10%);
     justify-content: end;
 }
 #cont{
     justify-content: start;
-    transform: rotate(5deg);
+    transform: rotate(5deg) translateX(7%);
 }
 .stickrs{
     border-radius: 12px;
-    width: 32%;
+    width: 40%;
     min-width: 150px;
     cursor:pointer;
     transition: 1s;
 }
 .lrgstckr{
     width: 70%;
+    box-shadow: 0 0 6px 5px rgb(255, 255, 255);
 }
 
-@-webkit-keyframes whitePulse {
-    from {
-        background-color: rgb(255, 125, 31);
-        -webkit-box-shadow: 0 0 10px white;
-   }
-   to {
-       background-color: rgb(255, 125, 31);
-       -webkit-box-shadow: 0 0 10px white;
-   }
-}
 @media(max-width: 900px){
     .bodyswap{
         flex-direction: column-reverse;
