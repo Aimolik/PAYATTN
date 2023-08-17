@@ -11,34 +11,14 @@
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
 <script src="https://kit.fontawesome.com/263328a4a5.js" crossorigin="anonymous"></script>
 </head>
-<body>
-    <div class="intro" id="intros" onmouseenter="hideIntro()">
-        <img src="/res/PALogo.png" id="introimg">
-        <h2 id="introsub">(click...)</h2>
-    </div>
+<body id="to">
+        <img src="/res/PALogo.png" class="intro" id="intros" onmouseover="hideIntro()">
     <nav class="navig">
             <a href="/index.html"><img src="/res/PALogo.png" id="mobilelogo"></a>
     </nav>
     <section class="bodyswap" id="one">
         <img src="/res/blinker.png" class="blinker" id="lblink">
         <img src="/res/blinker.png" class="blinker" id="rblink">
-        <div class="row">
-            <div class="box">
-                <i class="fa-solid fa-handshake" id="hands"></i>
-                <div class="textslide">
-                <h2>The Method</h2>
-                <p>We just nice like that.</p>
-            </div>
-            </div>
-            <div class="box">
-                <i class="fa-solid fa-eye" id="eye"></i>
-                <div class="textslide">
-http://127.0.0.1:5500/Services.html                    <h2>The Vision</h2>
-                    <p>Times may change, but our vision remains clear. PAYATTN relies on the hardwork of it's leaders in striving to become the household name in valet services.
-                        <br>We are the best choice for quality solutions in every lot, hotel, or dealership- we pay attention to YOUR needs.</p>
-                </div>
-            </div> 
-        </div> 
         <ul class="navig_menu" id="content">
             <li class="navig_item">
                 <a href="/Services.html" class="innernav" id="serv">
@@ -46,8 +26,8 @@ http://127.0.0.1:5500/Services.html                    <h2>The Vision</h2>
                 </a>
             </li>
             <div class="midcolumn">
-                <li id="plate">
-                    <img src="/res/PALogo.png" id="logo">
+                <li id="plate"><img src="/res/PALogo.png" id="logo">
+                    </a>
                 </li>
                 <ul id="smlinks">
                     <li class="sm">
@@ -72,7 +52,7 @@ http://127.0.0.1:5500/Services.html                    <h2>The Vision</h2>
         </ul>
     </section>
     <script>
-        var intro = document.getElementById('one');
+        var intro = document.getElementById('to');
         var menu = document.getElementById('content')
         var enginestart = new Audio('/res/engine.wav');
         var blinkers = document.getElementsByClassName('blinker');
@@ -89,38 +69,38 @@ http://127.0.0.1:5500/Services.html                    <h2>The Vision</h2>
                 bee.classList.add('lrgstckr');
                 intro.classList.add('blur');
                 lp.classList.add('plateblur');
-                lp.style.transition="blur 0s ease-in";
             })
             bs.addEventListener('mouseleave', e => {
                 bee.classList.remove('lrgstckr');
                 intro.classList.remove('blur');
                 lp.classList.remove('plateblur');
                 setTimeout(function(){
-                    lp.style.transition="650ms ease-in-out";
                 })
             })
         })
 
         function hideIntro(){
-            intros.style.transform = 'scale(0.14,0.14)';
-            intros.style.top = '-30px';
-            one.style.opacity = '1'
-            one.style.backgroundSize = '100%';
             setTimeout(function(){
-                enginestart.play();
+                intros.style.width = '232px';
+                intros.style.height = '100px';
+                intros.style.top = '47%';
+                intros.style.left = '49.3%';
+                one.style.opacity = '1'
+                one.style.backgroundSize = '100%';
+                setTimeout(function(){
+                    enginestart.play();
+                    intros.style.backgroundColor = 'rgba(255,255,255,0)';
+                }, 300);
+                setTimeout(function(){
+                    one.style.backgroundSize = 'cover';
+                }, 2450);
+                setTimeout(function(){
+                    menu.style.opacity = '1';
+                }, 3000);
+                setTimeout(function(){
+                    intros.style.display = 'none';
+                }, 5000);
             }, 300);
-            setTimeout(function(){
-                intros.style.opacity = '0';
-            }, 2000);
-            setTimeout(function(){
-                one.style.backgroundSize = 'cover';
-            }, 2450);
-            setTimeout(function(){
-                menu.style.opacity = '1';
-            }, 3000);
-            setTimeout(function(){
-                intros.style.display = 'none';
-            }, 3400);
         }
 
         function blinker(element, duration){
