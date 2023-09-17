@@ -46,49 +46,46 @@ body{
     align-items: center;
 }
 
-#servlist{
-    row-gap: 15px;
-    background-color: rgba(148, 76, 76, 0.87);
-    border-radius: 10px;
-    column-gap: 100px;
-    padding: 15px 35px;
-    margin: auto;
-    margin-bottom: 20px;
-}
-
 #serv_menu{
     list-style:none;
     display:flex;
     flex-direction: column;
-    justify-content: space-evenly;
-    justify-self: center;
     height: 80vh;
 }
 
 #servs{
-    flex-direction: row;
-    position:relative;
-    justify-content: center;
+    display:grid;
+    position: relative;
 }
 #servs img{
-position:absolute;
-width:75%;
-height: 75%;
+margin:auto;
+grid-row: 1;
+grid-column: 1;
 box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.7);
 transition: 1.2s;
 }
 
 #servtxt{
-    background-color: rgba(255, 255, 255, 0.815);
+    background-color: rgba(255, 255, 255, 0.7);
     border-radius: 10px;
-    padding: 10px;
+    padding: 25px 100px;
     color:black;
     font-size:2.4rem;
     z-index: 44;
-    margin-left:auto;
-    margin-right:auto;
+    grid-row: 1;
+    margin:auto;
+    grid-column:1;
     transition:1s;
 }
+
+#servlist{
+    background-color: rgba(232, 232, 232, 0.65);
+    border-radius: 10px;
+    column-gap: 100px;
+    padding: 10px 30px;
+    margin: auto;
+}
+
 #instruct{
     position:absolute;
     color:white;
@@ -96,18 +93,17 @@ transition: 1.2s;
     left:-70%;
     transition:2.5s;
 }
+
 #valet{
-    top:0%;
-    z-index:33;
+
 }
 #consult{
-    left:20%;
-    z-index: 22;
+
 }
 #system{
-    left:40%;
-    z-index:11;
+
 }
+
 .selectedVideo{
     opacity: 0;
 }
@@ -127,22 +123,22 @@ transition: 1.2s;
 }
 
 .selected{
-    color:rgb(0, 200, 0);
+    color:rgb(0, 0, 0);
 }
 .selected:hover{
-    color:rgb(0, 200, 0);
+    color:rgb(0, 0, 0);
 }
 
 #home{
     display:flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
 }
 
 #quickcontact{
     position: absolute;
-    bottom:22%;
+    bottom:18%;
     right:5%;
-    color: white;
+    color: rgb(255, 255, 255);
     font-size: 3rem;
     opacity:0;
     transition: 1.6s;
@@ -170,6 +166,7 @@ display:none;
     display:none;
 }
 #plate{
+    margin-top:1.5%;
     z-index: 9;
     align-self: center;
 }
