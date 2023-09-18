@@ -63,6 +63,68 @@ body{
     
 }
 
+
+
+#gallerycontainer{
+    display: flex;
+    flex-direction: column;
+    width:100vw;
+    height:100%;
+    position: absolute;
+    top: -100%;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    background-image: url(/res/redGarage.jpg);
+    background-size: cover;
+    background-repeat: round;
+    transition: all 2.5s ease-in-out;
+    text-align: center;
+
+    z-index: 92;
+}
+
+#gallery{
+    width: 60%;
+    height: 60%;
+    margin: auto;
+    margin-bottom: 0;
+    background-color: rgb(214, 214, 214);
+    border: solid white 5px;
+    border-radius: 4%;
+    position:relative;
+}
+#gallery img{
+    width:100%;
+    position:absolute;
+    top:0;
+    left:0;
+}
+
+#gallerynav{
+    position:relative;
+    overflow:hidden;
+    display:flex;
+    margin:auto;
+    margin-top:0;
+    font-size: 9.3vh;
+    width:40%;
+    height:4.7vh;
+    text-align: center;
+    justify-content: space-between;
+}
+#gallerynav i{
+}
+
+#garagehandle{
+    font-size: 4.5rem;
+}
+#handlesub{
+    margin-bottom:0.7vh;
+}
+
+
 .blinker{
     position:absolute;
     top:34.3%;
@@ -97,87 +159,8 @@ body{
     top:50%;
     left:50%;
     transform: translate(-50%,-50%);
-    z-index:98;
+    z-index:90;
     transition: all 3s ease-in-out;
-}
-
-@keyframes slideup{
-    0% {top:0};
-    100%{top:1000px};
-}
-
-#introsub{
-    color:rgb(0, 0, 0);
-    font-weight:light;
-    font-size:3vw;
-    position: absolute; bottom:15%; right: 5%;
-    animation: fadeIn 5s ease;
-    animation-delay:4s;
-    animation-fill-mode: backwards;
-    z-index: 99;
-}
-@keyframes fadeIn{
-    0%  {opacity: 0};
-    100%    {opacity: 1};
-}
-
-.box{
-    display: none;
-    background-color: rgba(255,255,255,0.8);
-    width: 35vw;
-    height: 20vw;
-    border-radius:  20px;
-    text-align: center;
-    position: relative;
-}
-
-.box h2{
-    margin: 10px 15px;
-    font-size: 3vw;
-}
-
-/*ALL LEFT BOX*/
-
-#hands{
-    font-size:20vw;
-}
-#hands:hover{
-    transition: 1s;
-}
-/*ALL RIGHT BOX*/
-
-#eye{
-    font-size:20vw;
-}
-#eye:hover{
-    transition: 1s;
-}
-
-.textslide{
-    background: transparent;
-    height: 100%;
-    width: 100%;
-    border-radius: 20px;
-    position: absolute;top:0;left:0;
-    transition: 1s;
-}
-.textslide:hover{
-    background: rgba(222, 149, 23, 0.97);
-}
-.textslide h2{
-    opacity:0;
-    transition:1.3s;
-}
-.textslide:hover h2{
-    opacity:1;
-}
-.textslide p{
-    opacity:0;
-    transition:1.3s;
-    font-size: 1.6vw;
-}
-.textslide:hover p{
-    opacity:1;
 }
 
 
@@ -192,11 +175,6 @@ display:none;
     max-height: 100px;
 }
 
-#rAr{
-    opacity: 1;
-    align-self: center;
-    display:none;
-}
 
 .midcolumn{
     text-align:center;
@@ -211,11 +189,14 @@ display:none;
     bottom: 33%;
     right: 44%;
 }
+
+
 #plate{
     z-index: 9;
     margin:auto;
     margin-bottom:42.3vh;
 }
+
 #smlinks{
     display:flex;
     justify-content: center;
@@ -228,6 +209,7 @@ display:none;
 .sm:hover{
     filter:invert(0.5);
 }
+
 
 .navig_menu{
     list-style:none;
