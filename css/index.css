@@ -64,6 +64,14 @@ body{
 }
 
 
+#gallerysticker{
+position:fixed;
+width:16%;
+top: 65%;
+left: 49%;
+transform: translate(-50%, -50%);
+border-radius: 12px;
+}
 
 #gallerycontainer{
     display: flex;
