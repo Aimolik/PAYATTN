@@ -12,8 +12,8 @@ html {
 body{
     background-image: url(/res/bmwbg.jpg);
     background-repeat: no-repeat;
-    background-size: cover;
-    background-position:center;
+    background-size:100vw 120vh;
+    background-position: center;
 }
 
 
@@ -65,9 +65,10 @@ body{
 
 
 #gallerysticker{
-position:fixed;
-width:16%;
-top: 65%;
+position:absolute;
+width:13vw;
+height: 6vh;
+bottom: 13%;
 left: 49%;
 transform: translate(-50%, -50%);
 border-radius: 12px;
@@ -234,6 +235,8 @@ display:none;
     flex:1;
     transition: 625ms ease-in-out;
     z-index:2;
+    outline: solid red;
+    overflow: visible;
 }
 
 
@@ -247,11 +250,11 @@ display:none;
 }
 #serv{
     transform: rotate(-5deg) translateX(-4%);
-    justify-content: end;
+    margin-right: -4vw;
 }
 #cont{
-    justify-content: start;
     transform: rotate(5deg);
+    margin-left: -4vw
 }
 #cont:hover{
     transform: none;
@@ -262,13 +265,13 @@ display:none;
 
 .stickrs{
     border-radius: 12px;
-    width: 40%;
+    width: 14vw;
     min-width: 150px;
     cursor:pointer;
     transition: 1s;
 }
 .lrgstckr{
-    width: 90%;
+    width: 25vw;
     box-shadow: 0 0 6px 5px rgb(255, 255, 255);
 }
 
