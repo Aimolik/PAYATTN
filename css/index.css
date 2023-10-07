@@ -2,34 +2,29 @@
     margin: 0;
     padding: 0;
     font-family: 'Roboto Condensed', sans-serif;
-    overflow: hidden;
     z-index: 2;
 }
 
-html {
-    height:100%;
-}
 body{
     background-image: url(/res/bmwbg.jpg);
+    background-size:cover;
     background-repeat: no-repeat;
-    background-size:100vw 120vh;
     background-position: center;
 }
 
 
 .bodyswap{
-    width:100%;
     opacity: 0;
-    height:100%;
-    display:stretch;
-    flex-direction: row;
-    max-height: max-content;
-    background:transparent;
-    background-position:center;
-    background-repeat: no-repeat;
-    background-size:cover;
-    transition: background-size 2.5s ease-in, opacity 0s;
+    transition: opacity 0s;
     position:relative;
+    height: 100vh;
+}
+
+.main{
+    position: relative;
+    display: grid;
+    grid-template-rows: 2fr 1.2fr 0.5fr;
+    height:100%;
 }
 
 .blur::before{
@@ -65,13 +60,11 @@ body{
 
 
 #gallerysticker{
-position:absolute;
-width:13vw;
-height: 6vh;
-bottom: 13%;
-left: 49%;
-transform: translate(-50%, -50%);
-border-radius: 12px;
+    border-radius: 20px;
+    position:relative;
+    top:152px;
+    right: 12px;
+    
 }
 
 #gallerycontainer{
@@ -91,6 +84,7 @@ border-radius: 12px;
     transition: all 2.5s ease-in-out;
     text-align: center;
 
+    display: none;
     z-index: 92;
 }
 
@@ -182,35 +176,24 @@ display:none;
     text-decoration:none;
     width: 232px;
     max-height: 100px;
-}
-
-
-.midcolumn{
-    text-align:center;
-    display:flex;
-    flex-direction: column;
-    margin-right:20px;
-    font-size: 1.2rem;
-}
-.midcolumn h1{
-    color:white;
-    position:absolute;
-    bottom: 33%;
-    right: 44%;
+    position: relative;
 }
 
 
 #plate{
     z-index: 9;
-    margin:auto;
-    margin-bottom:42.3vh;
+    justify-self: center;
+    align-self: flex-end;
 }
 
 #smlinks{
     display:flex;
     justify-content: center;
-    column-gap: 5%;
-    font-size: 3vh;
+    column-gap: 13px;
+    font-size: 1.8rem;
+    list-style: none;
+    align-self: flex-end;
+    margin-bottom: 5px;
 }
 .sm{
     transition: 400ms ease-in-out;
@@ -222,114 +205,70 @@ display:none;
 
 .navig_menu{
     list-style:none;
-    display:flex;
-    flex-direction: row;
-    height:100vh;
+    display:grid;
+    justify-content: center;
+    align-self: flex-start;
+    grid-template-columns: auto;
 }
 .navig_item{
     background-color: null;
-    font-size:1.5rem;
-    border-radius: 8px;
-    display:flex;
-    opacity: 1;
-    flex:1;
-    transition: 625ms ease-in-out;
+    transition: 800ms ease-in-out;
     z-index:2;
-    outline: solid red;
-    overflow: visible;
+    grid-row-start:1;
 }
 
 
 .innernav{
-    padding:2rem;
-    border-radius: 5px;
-    margin:auto;
-    margin-bottom:28vh;
     display:flex;
     transition: 1s;
+    margin:23px;
+    margin-top:38px;
 }
+.innernav img{
+    transform: inherit;
+}
+
 #serv{
-    transform: rotate(-5deg) translateX(-4%);
-    margin-right: -4vw;
+    transform: rotate(-5deg);
+    grid-column-start: 1;
+}
+#serv:hover{
+    transform: rotate(0) scale(2);
 }
 #cont{
     transform: rotate(5deg);
-    margin-left: -4vw
+    grid-column-start: 3;
 }
 #cont:hover{
-    transform: none;
-}
-#serv:hover{
-    transform: none;
+    transform: rotate(0) scale(2);
 }
 
 .stickrs{
-    border-radius: 12px;
-    width: 14vw;
-    min-width: 150px;
+    border-radius: 15px;
+    width: 160px;
     cursor:pointer;
     transition: 1s;
 }
 .lrgstckr{
-    width: 25vw;
-    box-shadow: 0 0 6px 5px rgb(255, 255, 255);
+    box-shadow: 0 0 8px 7px rgb(255, 255, 255);
 }
-
-@media(max-width: 900px){
-    .bodyswap{
-        flex-direction: column-reverse;
+@media (min-width: 1180px) {
+    body{
+        background-size: 180vh;
     }
-    .introtext{
-        font-size:1px;
+    #logo{
+        width: 250px;
+        max-height:110px;
     }
-    .row{
-      display:none;
-    }
-    .box{
-        margin-top: 5%;
-        max-width:40vw;
-        max-height: 40vw;
-        display:flex;
-        justify-content: center;
-    }
-    .textslide h2{
-        font-size: 4vw;
-    }
-    .textslide p{
-        font-size: 2.8vw;
+    
+    .stickrs{
+        width: 200px;
     }
     .navig_menu{
-        align-self:stretch;
+        margin-top: 18px;
+    }
+    #gallerysticker{
+        margin-top:15px;
     }
 
-    #mobilelogo{
-        cursor:pointer;
-        text-decoration:none;
-        max-width: 25%;
-        max-height:auto;
-        align-self: center;
-        position:absolute;
-        top: 50%; left: 50%;
-        transform: translate(-50%, -50%);
-    }
-    #logoitem{
-        display:none;
-    }
-    .navig_item{
-        font-size:6vw;
-        flex-basis:auto;
-        flex-grow: 1;
-        padding-bottom: 5%;
-    }
-    .navig{
-    display: flex;
-    background: rgb(138, 174, 196);
-    margin:0;
-    height:10vh;
-    top:0;
-    position:relative;
-    }
-    .textslide{
-        display:none;
-    }
 }

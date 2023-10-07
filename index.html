@@ -12,46 +12,43 @@
 <script src="https://kit.fontawesome.com/263328a4a5.js" crossorigin="anonymous"></script>
 </head>
 <body id="to">
-        <img src="/res/PALogo.png" class="intro" id="intros" onmouseover="hideIntro()">
-    <nav class="navig">
-            <a href="/index.html"><img src="/res/PALogo.png" id="mobilelogo"></a>
-    </nav>
+    <img src="/res/PALogo.png" class="intro" id="intros" onmouseover="hideIntro()">
 
     <section class="bodyswap" id="one">
-
-        <div id="gallerycontainer">
-            <div id="gallery">
-                <img src="/res/gal1.jpg">
-                <img src="/res/gal3.jpg">
-                <img src="/res/gal2.jpg">
+        <div class="main">
+            <div id="plate"><img src="/res/PALogo.png" id="logo">
+            </a>
             </div>
-            <div id="gallerynav">
-                <i class="fa-solid fa-arrows-turn-right fa-flip-both" style="color: #ffffff;"></i>
-                <i class="fa-solid fa-arrows-turn-right fa-flip-vertical" style="color: #ffffff;"></i>
-            </div>
-            <i id="garagehandle" class="fa-solid fa-chevron-up fa-bounce" style="color: #000000;"></i>
-            <p id="handlesub">Exit gallery</p>
-        </div>
+        
+            <img src="/res/blinker.png" class="blinker" id="lblink">
+            <img src="/res/blinker.png" class="blinker" id="rblink">
 
-        <img src="/res/blinker.png" class="blinker" id="lblink">
-        <img src="/res/blinker.png" class="blinker" id="rblink">
-
-        <ul class="navig_menu" id="content">
-            <li class="navig_item">
-                <a href="/Services.html" class="innernav" id="serv">
-                    <img src="/res/greenserv.png" class="stickrs">
-                </a>
-            </li>
-
-            <div class="midcolumn">
-                <li id="plate"><img src="/res/PALogo.png" id="logo">
+            <div class="navig_menu" id="content">
+                <div class="navig_item" id="serv">
+                    <a href="/Services.html" class="innernav">
+                        <img src="/res/greenserv.png" class="stickrs">
                     </a>
-                </li>
-
-                <li>
-                        <img src="/res/redGallery.png" id="gallerysticker">
-                </li>
-
+                </div>
+                <div class="navig_item" id="cont">
+                    <a href="/Contact.html" class="innernav">
+                        <img src="/res/graycont.png" class="stickrs">
+                    </a>
+                </div>
+                <img src="/res/redGallery.png" class="stickrs" id="gallerysticker">
+            </div>
+                <div id="gallerycontainer">
+                    <div id="gallery">
+                        <img src="/res/gal1.jpg">
+                        <img src="/res/gal3.jpg">
+                        <img src="/res/gal2.jpg">
+                    </div>
+                    <div id="gallerynav">
+                        <i class="fa-solid fa-arrows-turn-right fa-flip-both" style="color: #ffffff;"></i>
+                        <i class="fa-solid fa-arrows-turn-right fa-flip-vertical" style="color: #ffffff;"></i>
+                    </div>
+                    <i id="garagehandle" class="fa-solid fa-chevron-up fa-bounce" style="color: #000000;"></i>
+                    <p id="handlesub">Exit gallery</p>
+                </div>
                 <ul id="smlinks">
                     <li class="sm">
                         <a href="https://www.instagram.com/payattnent/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram" style="color: #ffffff;"></i>
@@ -67,17 +64,12 @@
                     </li>
                 </ul>
             </div>
-
-            <li class="navig_item">
-                <a href="/Contact.html" class="innernav" id="cont">
-                    <img src="/res/graycont.png" class="stickrs">
-                </a>
-                </li>
-        </ul>
+        </div>
     </section>
 
     <script>
         var gal = document.getElementById('gallerycontainer');
+        var bodysection = document.getElementById('one');
         var intro = document.getElementById('to');
         var menu = document.getElementById('content')
         var enginestart = new Audio('/res/engine.wav');
@@ -87,6 +79,8 @@
         var lp = document.getElementById('logo');
         var all = intro.children;
 
+        const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
+const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0)
         
 
         stkrs.forEach(bs => {
@@ -95,6 +89,7 @@
                 bee.classList.add('lrgstckr');
                 intro.classList.add('blur');
                 lp.classList.add('plateblur');
+                //alert( 'Your screen resolution is ' + vw + 'x' + vh );
             })
             bs.addEventListener('mouseleave', e => {
                 bee.classList.remove('lrgstckr');
@@ -126,8 +121,8 @@
                 intros.style.height = '100px';
                 intros.style.top = '47%';
                 intros.style.left = '49.3%';
-                one.style.opacity = '1'
-                one.style.backgroundSize = '100%';
+                bodysection.style.opacity = '1'
+                bodysection.style.backgroundSize = '100%';
                 setTimeout(function(){
                     enginestart.play();
                     intros.style.backgroundColor = 'rgba(255,255,255,0)';
