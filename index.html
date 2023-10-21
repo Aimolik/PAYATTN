@@ -36,11 +36,12 @@
                 </div>
                 <img src="/res/redGallery.png" class="stickrs" id="gallerysticker">
             </div>
+            <div id="garagedoor">
                 <div id="gallerycontainer">
                     <div id="gallery">
-                        <img src="/res/gal1.jpg">
-                        <img src="/res/gal3.jpg">
-                        <img src="/res/gal2.jpg">
+                        <img src="/res/gal1.jpg" id="gal1">
+                        <img src="/res/gal3.jpg" id="gal2">
+                        <img src="/res/gal2.jpg" id="gal3">
                     </div>
                     <div id="gallerynav">
                         <i class="fa-solid fa-arrows-turn-right fa-flip-both" style="color: #ffffff;"></i>
@@ -49,6 +50,7 @@
                     <i id="garagehandle" class="fa-solid fa-chevron-up fa-bounce" style="color: #000000;"></i>
                     <p id="handlesub">Exit gallery</p>
                 </div>
+            </div>
                 <ul id="smlinks">
                     <li class="sm">
                         <a href="https://www.instagram.com/payattnent/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram" style="color: #ffffff;"></i>
@@ -68,7 +70,7 @@
     </section>
 
     <script>
-        var gal = document.getElementById('gallerycontainer');
+        var gal = document.getElementById('garagedoor');
         var bodysection = document.getElementById('one');
         var intro = document.getElementById('to');
         var menu = document.getElementById('content')
@@ -80,8 +82,7 @@
         var all = intro.children;
 
         const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
-const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0)
-        
+        const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0)
 
         stkrs.forEach(bs => {
             var bee = bs.querySelector('img');
@@ -111,8 +112,18 @@ const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeig
         !!!!!!!!!!!!!!!!!!!!!!
         */
 
+        document.getElementById('gallerysticker').addEventListener('click', (e) =>{(LowerGallery())});
+
         function LowerGallery(){
-            gal.style.top = '0%';
+            gal.style.display = "block";
+            setTimeout(function(){
+            gal.style.top = '0px';
+            }, 60);
+        }
+        function CloseGallery(){
+            setTimeout(function(){
+            gal.style.top = '-110vh';
+            }, 60);
         }
         
         function hideIntro(){
